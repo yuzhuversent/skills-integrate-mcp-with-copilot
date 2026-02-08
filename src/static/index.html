@@ -10,7 +10,47 @@
     <header>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
+      <div class="user-menu">
+        <button id="user-icon-btn" class="user-icon-btn" title="Login">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+        <div id="user-dropdown" class="user-dropdown hidden">
+          <div id="logged-out-menu">
+            <button id="login-btn" class="dropdown-item">Login</button>
+          </div>
+          <div id="logged-in-menu" class="hidden">
+            <div class="user-info">
+              <strong id="user-name"></strong>
+              <span class="user-role">Teacher</span>
+            </div>
+            <button id="logout-btn" class="dropdown-item">Logout</button>
+          </div>
+        </div>
+      </div>
     </header>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3>Teacher Login</h3>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" required />
+          </div>
+          <button type="submit">Login</button>
+          <div id="login-error" class="error-message hidden"></div>
+        </form>
+      </div>
+    </div>
 
     <main>
       <section id="activities-container">
